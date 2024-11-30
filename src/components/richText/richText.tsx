@@ -2,7 +2,7 @@ import { PortableText } from 'next-sanity'
 
 import { builder } from '@/lib/sanity'
 
-const portableTextComponents = {
+const portableTextComponents: any = {
   block: ({ children, value }: { children: React.ReactNode; value: any }) => {
     switch (value.style) {
       case 'h1':
@@ -83,7 +83,7 @@ const portableTextComponents = {
         className='rounded-lg shadow-md'
       />
     ),
-    image: ({ value }) => (
+    image: ({ value }: { value: any }) => (
       <img src={builder.image(value).url()} className='my-4 rounded-lg' />
     ),
     customComponent: ({ value }: { value?: any }) => (

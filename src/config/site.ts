@@ -3,16 +3,13 @@ import type icons from '@/components/icons'
 export type SiteConfig = typeof siteConfig
 
 const links = {
-  twitter: 'https://twitter.com/@assafEnrique',
-  github: 'https://github.com/JorgeAssaf/JA',
-  githubAccount: 'https://github.com/jorgeassaf',
-  threads: 'https://threads.net/@jorgeassaf_dev',
+  github: 'https://github.com/AliAamir1',
+  githubAccount: 'https://github.com/AliAamir1',
 }
 
 export const siteConfig = {
   name: 'Ali Aamir',
-  description:
-    'Personal portfolio of Jorge Assaf, a software engineer based in Mexico City. ',
+  description: 'Personal portfolio of Ali Aamir, a software engineer',
   url:
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:3000'
@@ -49,7 +46,7 @@ export const siteConfig = {
     },
   ],
   blogCategories: [
-    { title: 'JS', icon: 'braces' },
+    { title: 'AA', icon: 'braces' },
     { title: 'React', icon: 'flaskconical' },
     { title: 'Next.js', icon: 'panelstopleft' },
     { title: 'Tools', icon: 'pocketknife' },
@@ -103,3 +100,4 @@ export const siteConfig = {
     },
   ],
 }
+

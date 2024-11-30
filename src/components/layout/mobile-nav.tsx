@@ -30,7 +30,7 @@ const MobileNav: FC<MobileNavProps> = ({ items }) => {
       <div className='flex text-left md:flex'>
         <Link aria-label='Home' href='/' title='Home'>
           <p className='text-2xl font-bold md:flex'>
-            JA<span className='text-primary'>.</span>
+            AA<span className='text-primary'>.</span>
           </p>
         </Link>
       </div>
@@ -56,7 +56,7 @@ const MobileNav: FC<MobileNavProps> = ({ items }) => {
                 onClick={() => setIsOpen(false)}
               >
                 <p className='text-3xl font-bold md:inline-block'>
-                  JA<span className='text-primary'>.</span>
+                  AA<span className='text-primary'>.</span>
                 </p>
               </Link>
             </div>

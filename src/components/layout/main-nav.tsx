@@ -4,8 +4,8 @@ import type { FC } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { cn } from '@/lib/utils'
 import type { MainNavItem } from '@/types/site'
+import { cn } from '@/lib/utils'
 
 import { ThemeToggle } from './theme-toggle'
 
@@ -24,7 +24,7 @@ const MainNav: FC<MainNavProps> = ({ items }) => {
           className='hidden items-center space-x-2 md:flex'
         >
           <p className='hidden text-2xl font-bold md:inline-block'>
-            JA<span className='text-primary'>.</span>
+            AA<span className='text-primary'>.</span>
           </p>
         </Link>
 
@@ -78,3 +78,4 @@ function MenuLink({
     </Link>
   )
 }
+

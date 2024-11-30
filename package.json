@@ -12,10 +12,14 @@
     "unlighthouse": "pnpx unlighthouse --site https://jorgeassaf.vercel.app --desktop --no-cache"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@hookform/resolvers": "^3.9.1",
     "@portabletext/react": "^3.1.0",
     "@radix-ui/react-aspect-ratio": "1.1.0",
     "@radix-ui/react-dialog": "1.1.2",
+    "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "1.1.0",
+    "@radix-ui/react-toast": "^1.2.2",
     "@react-three/drei": "9.115.0",
     "@react-three/fiber": "9.0.0-alpha.8",
     "@sanity/image-url": "^1.1.0",
@@ -34,12 +38,15 @@
     "next-themes": "0.3.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-hook-form": "^7.53.2",
     "react-portable-text": "^0.6.0",
     "rehype-autolink-headings": "7.1.0",
     "rehype-slug": "6.0.0",
     "remark-toc": "9.0.0",
+    "sonner": "^1.7.0",
     "tailwind-merge": "2.5.4",
-    "three": "0.169.0"
+    "three": "0.169.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@content-collections/core": "^0.7.2",

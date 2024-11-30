@@ -3,6 +3,7 @@ import { allPosts } from 'content-collections'
 import { getLatestProjectsQuery } from '@/lib/querys'
 import { client } from '@/lib/sanity'
 import { PostCard } from '@/components/cards/post-card'
+import Contact from '@/components/contact-form'
 import Hero from '@/components/hero'
 import { PageHeader } from '@/components/page-header'
 import Projects from '@/components/projects'
@@ -30,6 +31,7 @@ export default async function Home() {
       {allPosts.slice(0, 3).map((post, i) => (
         <PostCard i={i} key={post.slug} post={post} />
       ))}
+      <Contact />
     </section>
   )
 }

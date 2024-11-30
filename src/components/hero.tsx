@@ -34,10 +34,10 @@ const Hero = () => {
         <div className='space-y-2'>
           <m.div variants={FADE_DOWN_ANIMATION_VARIANTS} className='space-y-2'>
             <m.h1 className='text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl'>
-              Hi, I’m Jorge Assaf.
+              Hi, I’m Ali Aamir.
             </m.h1>
             <m.p className='text-2xl font-semibold text-primary md:text-3xl lg:text-4xl'>
-              Front-end Developer.
+              Software Engineer
             </m.p>
           </m.div>
           <m.p
@@ -55,7 +55,7 @@ const Hero = () => {
           >
             <Link
               className={cn(buttonVariants())}
-              href='https://github.com/JorgeAssaf'
+              href='https://github.com/AliAamir1'
               target='_blank'
               rel='noopener noreferrer'
               title='View my GitHub profile'
@@ -66,7 +66,7 @@ const Hero = () => {
             </Link>
             <Link
               className={cn(buttonVariants())}
-              href='https://www.linkedin.com/in/jorge-enrique-assaf/'
+              href='https://www.linkedin.com/in/ali-aamir-se/'
               title='View my LinkedIn profile'
               aria-label='View my LinkedIn profile'
               target='_blank'
@@ -75,16 +75,16 @@ const Hero = () => {
               <LinkedIn className='size-6' aria-hidden='true' />
               <span className='sr-only'>LinkedIn</span>
             </Link>
-            <Link
-              className={cn(buttonVariants({ variant: 'secondary' }))}
-              href='https://drive.google.com/file/d/1KGmCNQLKOSRosglp8x-hNxsHgeHxkGPr/view?usp=sharing'
-              title='Download my resume'
-              aria-label='Download my resume'
+            <a
+              href='/pdf/ali-resume.pdf'
+              aria-label='Download Resume'
               target='_blank'
               rel='noopener noreferrer'
+              download
+              className={cn(buttonVariants({ variant: 'secondary' }))}
             >
               Resume
-            </Link>
+            </a>
           </m.div>
         </div>
         <m.div
@@ -99,3 +99,4 @@ const Hero = () => {
 }
 
 export default Hero
+

@@ -15,26 +15,13 @@ const SiteFooter = () => {
               Let&apos;s talk
             </h3>
             <h4 className='scroll-m-20 text-base tracking-tight'>
-              Send me message on LinkedIn or in X {'(Twitter)'}
+              Send me message on LinkedIn or Mail me at aliaamir2015@gmail.com
             </h4>
           </div>
 
           <div className='flex flex-wrap gap-5'>
             <Link
-              href='https://www.x.com/assafenrique'
-              target='_blank'
-              rel='noreferrer'
-              title='Visit my X profile'
-              aria-label='Visit my X profile'
-              className={cn(
-                buttonVariants({ size: 'icon', variant: 'outline' }),
-              )}
-            >
-              <Twitter className='size-4' aria-hidden='true' />
-              <span className='sr-only'>X {'(Twitter)'}</span>
-            </Link>
-            <Link
-              href='https://www.linkedin.com/in/jorge-enrique-assaf/'
+              href='https://www.linkedin.com/in/ali-aamir-se/'
               target='_blank'
               rel='noreferrer'
               title='Visit my LinkedIn profile'
@@ -47,7 +34,7 @@ const SiteFooter = () => {
               <span className='sr-only'>LinkedIn</span>
             </Link>
             <Link
-              href='https://www.github.com/jorgeassaf'
+              href='https://github.com/AliAamir1'
               target='_blank'
               rel='noreferrer'
               title='Visit my GitHub profile'
@@ -61,7 +48,7 @@ const SiteFooter = () => {
             </Link>
           </div>
         </div>
-        <p className='mt-10'>Built by Jorge Assaf.</p>
+        <p className='mt-10'>Built by Ali Aamir.</p>
         <p>
           Model by{' '}
           <Link
@@ -85,3 +72,4 @@ const SiteFooter = () => {
 }
 
 export default SiteFooter
+

@@ -4,7 +4,14 @@ import { FADE_DOWN_ANIMATION_VARIANTS } from '@/constants'
 import { JOB_EXPERIENCE } from '@/config/experience'
 import { Experience } from '@/components/experience'
 import { FramerDiv, FramerSection } from '@/components/framer'
-import { Next, Prisma, React, Tailwind, Typescript } from '@/components/icons'
+import {
+  Next,
+  NodeJs,
+  Prisma,
+  React,
+  Tailwind,
+  Typescript,
+} from '@/components/icons'
 import { MyResumen } from '@/components/my-resumen'
 import { PageHeader } from '@/components/page-header'
 
@@ -34,11 +41,10 @@ export default function AboutPage() {
       >
         <FramerDiv variants={FADE_DOWN_ANIMATION_VARIANTS}>
           <p className='leading-7 text-foreground/70 md:text-lg [&:not(:first-child)]:mt-6'>
-            I&apos;m a front-end web developer with experience in JavaScript,
-            React, Next.js and Astro. My goal is to become a FullStack
-            programmer. I enjoy creating beautiful and easy to use web
-            applications that connect with users. I am always looking for new
-            opportunities to grow and collaborate on exciting projects.
+            I&apos;m a full-stack web developer with experience in JavaScript,
+            React, Next.js and NodeJs. I enjoy creating beautiful and easy to
+            use web applications that connect with users. I am always looking
+            for new opportunities to grow and collaborate on exciting projects.
           </p>
         </FramerDiv>
 
@@ -80,6 +86,10 @@ export default function AboutPage() {
               <Typescript className='size-5' />
               <span>Typescript</span>
             </div>
+            <div className='flex items-center justify-center gap-1.5 rounded-md bg-[#3583d7]/30 px-4 py-2'>
+              <NodeJs className='size-5'  />
+              <span>NodeJs</span>
+            </div>
             <div className='flex items-center justify-center gap-1.5 rounded-md bg-[#2D3748] px-4 py-2'>
               <Prisma className='size-5' />
               <span>Prisma</span>
@@ -90,3 +100,4 @@ export default function AboutPage() {
     </>
   )
 }
+

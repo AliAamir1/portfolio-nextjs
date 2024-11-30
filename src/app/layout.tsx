@@ -2,9 +2,10 @@ import '@/styles/globals.css'
 
 import type { Metadata, Viewport } from 'next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Toaster } from 'sonner'
 
-import { siteConfig } from '@/config/site'
 import { fontmono, fontsans } from '@/config/fonts'
+import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 import { Analytics } from '@/components/analytics'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     'Tailwind CSS',
     'TypeScript',
     'Shadcn',
-    'Jorge Assaf',
+    'Ali Aamir',
     'Portfolio',
     'Blog',
     'Sanity',
@@ -33,11 +34,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: 'Jorge Assaf',
-      url: 'https://github.com/JorgeAssaf',
+      name: 'Ali Aamir',
+      url: 'https://github.com/AliAamir1',
     },
   ],
-  creator: 'Jorge Assaf',
+  creator: 'Ali Aamir',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -45,13 +46,6 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [`${siteConfig.url}/opengraph-image.png`],
-    creator: '@AssafEnrique',
   },
 }
 
@@ -72,6 +66,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           fontsans.className,
         )}
       >
+        <Toaster richColors />
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <div className='fixed -z-20 size-full dark:bg-[radial-gradient(ellipse_100%_100%_at_50%_-10%,rgba(120,119,198,0.35),transparent)]' />
           {children}
@@ -82,3 +77,4 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
     </html>
   )
 }
+
