@@ -1,0 +1,208 @@
+---
+title: Server-Side Rendering (SSR) and Server Actions in Next.Js
+summary: Next.js is a powerful React framework that offers built-in support for server-side rendering (SSR) and server actions, helping developers build highly optimized web applications. In this post, we’ll dive deep into these features and explore their benefits and usage.
+mainImage: data:image/jpeg;base64,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
+author:
+  name: Ali Aamir
+  username: AliAamir1
+  role: Software Engineer
+  image: https://avatars.githubusercontent.com/jorgeassaf
+  links:
+    - name: Twitter
+      url: https://twitter.com/enriqueassaf
+    - name: GitHub
+      url: https://github.com/AliAamir1
+
+categories:
+  - Next.js
+---
+
+## Introduction
+
+Next.js is a React framework that provides developers with many built-in features, one of the most powerful being **Server-Side Rendering (SSR)**. SSR allows web pages to be rendered on the server, improving performance, SEO, and user experience. 
+
+In addition to SSR, **Server Actions** in Next.js 13 and beyond provide a new way to handle backend logic directly from the components. This post will cover these two features in detail and explain how to implement them in your Next.js applications.
+
+## What is Server-Side Rendering (SSR)?
+
+### How SSR Works
+
+Server-Side Rendering (SSR) is a technique where the HTML of a web page is generated on the server instead of the client. When a user requests a page, the server pre-renders the HTML, and the browser only needs to display it, which can significantly improve performance for the initial load.
+
+In Next.js, SSR can be easily implemented by exporting an async function called getServerSideProps. This function is executed on the server for every request and fetches the necessary data before rendering the page.
+
+### Example of SSR in Next.js
+
+Here’s how to implement SSR using getServerSideProps in a Next.js page:
+
+```tsx
+// pages/posts/[id].tsx
+import { GetServerSideProps } from 'next'
+
+interface PostProps {
+  post: {
+    title: string
+    content: string
+  }
+}
+
+const Post = ({ post }: PostProps) => {
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.content}</p>
+    </div>
+  )
+}
+
+export const getServerSideProps = async (context) => {
+  const { id } = context.params
+  const res = await fetch('https://api.example.com/posts/\${id}')
+  const post = await res.json()
+
+  return {
+    props: { post },
+  }
+}
+
+export default Post
+```
+
+### Key Benefits of SSR
+- **Faster initial load**: Since the page is pre-rendered, the user gets the fully rendered HTML immediately.
+- **Improved SEO**: Search engines can index the page easily because it has the full content when it loads.
+- **Personalized content**: SSR allows dynamic, user-specific content to be rendered on each request.
+
+## What are Server Actions?
+
+Introduced in Next.js 13, **Server Actions** enable you to define functions that execute backend code directly from the React component. Unlike traditional methods like API routes, Server Actions allow you to handle logic (like data fetching, database updates, or other server-side operations) directly in your React components, making it easier to manage your server-side logic.
+
+### Benefits of Server Actions
+- **Simplifies Backend Logic**: You no longer need to create separate API routes for most operations.
+- **Better Performance**: Server Actions can execute directly within the component lifecycle, reducing the need for redundant API calls.
+- **Clean Code**: It allows you to keep your server-side logic close to where it is used.
+
+### Example of Server Actions in Next.js
+
+Here’s a simple example of using Server Actions to create a blog post in Next.js:
+
+```tsx
+// app/page.tsx (Server Component)
+'use server'
+
+import { useState } from 'react'
+
+export default function Page() {
+  const [postTitle, setPostTitle] = useState('')
+  const [postContent, setPostContent] = useState('')
+
+  const handleSubmit = async () => {
+    await createPost({ title: postTitle, content: postContent })
+  }
+
+  return (
+    <div>
+      <h1>Create a New Post</h1>
+      <input
+        type="text"
+        value={postTitle}
+        onChange={(e) => setPostTitle(e.target.value)}
+        placeholder="Title"
+      />
+      <textarea
+        value={postContent}
+        onChange={(e) => setPostContent(e.target.value)}
+        placeholder="Content"
+      />
+      <button onClick={handleSubmit}>Submit</button>
+    </div>
+  )
+}
+
+// Server Action
+async function createPost({ title, content }: { title: string; content: string }) {
+  const res = await fetch('https://api.example.com/posts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ title, content }),
+  })
+
+  if (!res.ok) {
+    throw new Error('Failed to create post')
+  }
+
+  return res.json()
+}
+```
+
+### How Server Actions Work:
+- The \createPost\ function is defined as a **server action** (note the \'use server'\ directive).
+- When the user submits the form, the \handleSubmit\ function calls the \createPost\ function, which sends data to the server and stores it in the database.
+- The key advantage is that it reduces boilerplate code and simplifies how server-side operations are triggered.
+
+## How to Use SSR and Server Actions Together
+
+You can combine SSR and Server Actions in Next.js to render data on the server and allow dynamic operations on the client without having to use API routes explicitly. Here’s an example combining SSR for initial data fetching with Server Actions for dynamic content handling:
+
+```tsx
+// pages/dashboard.tsx
+import { GetServerSideProps } from 'next'
+import { useState } from 'react'
+
+interface DashboardProps {
+  user: { name: string; postsCount: number }
+}
+
+const Dashboard = ({ user }: DashboardProps) => {
+  const [newPost, setNewPost] = useState('')
+  const handlePostCreation = async () => {
+    await createPost({ content: newPost })
+  }
+
+  return (
+    <div>
+      <h1>Welcome, {user.name}</h1>
+      <p>You have {user.postsCount} posts</p>
+
+      <textarea
+        value={newPost}
+        onChange={(e) => setNewPost(e.target.value)}
+        placeholder="Write your post here"
+      />
+      <button onClick={handlePostCreation}>Create Post</button>
+    </div>
+  )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch('https://api.example.com/user')
+  const user = await res.json()
+
+  return { props: { user } }
+}
+
+async function createPost({ content }: { content: string }) {
+  const res = await fetch('https://api.example.com/create-post', {
+    method: 'POST',
+    body: JSON.stringify({ content }),
+  })
+
+  if (!res.ok) {
+    throw new Error('Failed to create post')
+  }
+}
+
+export default Dashboard
+```
+
+## Conclusion
+
+Next.js offers powerful tools like Server-Side Rendering (SSR) and Server Actions that can greatly simplify how we build and render web applications. SSR ensures faster initial loads and improved SEO, while Server Actions allow you to handle backend logic directly within your components, streamlining the development process.
+
+By understanding and utilizing these features, you can optimize the performance and functionality of your Next.js applications, providing a better experience for both developers and end-users.
+
+
+If you're curious about how to implement SSR or Server Actions in your own Next.js project, feel free to dive deeper into the official Next.js documentation, or reach out for further clarification.
+

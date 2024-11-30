@@ -28,9 +28,11 @@ export default async function Home() {
         title='Recent Resourses'
         description='View my latest shared resources and articles'
       />
-      {allPosts.slice(0, 3).map((post, i) => (
-        <PostCard i={i} key={post.slug} post={post} />
-      ))}
+      <div className='flex flex-wrap justify-between'>
+        {allPosts.slice(0, 3).map((post, i) => (
+          <PostCard i={i} key={post.slug} post={post} />
+        ))}
+      </div>
       <Contact />
     </section>
   )

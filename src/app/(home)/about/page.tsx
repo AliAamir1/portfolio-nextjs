@@ -76,7 +76,7 @@ export default function AboutPage() {
             </div>
             <div className='flex items-center justify-center gap-1.5 rounded-md bg-[#202021] px-4 py-2'>
               <Next className='size-5' />
-              <span>Next</span>
+              <span className='text-white'>Next</span>
             </div>
             <div className='flex items-center justify-center gap-1.5 rounded-md bg-[#49c1cf]/25 px-4 py-2'>
               <Tailwind className='size-5' />
@@ -87,12 +87,12 @@ export default function AboutPage() {
               <span>Typescript</span>
             </div>
             <div className='flex items-center justify-center gap-1.5 rounded-md bg-[#3583d7]/30 px-4 py-2'>
-              <NodeJs className='size-5'  />
+              <NodeJs className='size-5' />
               <span>NodeJs</span>
             </div>
             <div className='flex items-center justify-center gap-1.5 rounded-md bg-[#2D3748] px-4 py-2'>
               <Prisma className='size-5' />
-              <span>Prisma</span>
+              <span className='text-white'>Prisma</span>
             </div>
           </div>
         </FramerDiv>

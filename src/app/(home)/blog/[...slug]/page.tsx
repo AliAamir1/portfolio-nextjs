@@ -102,6 +102,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params)
   if (!post) notFound()
   const pager = getPager(post, allPosts)
+  console.log(allPosts)
   return (
     <section className='mx-auto'>
       <div className='grid grid-cols-1 justify-center gap-8 md:grid-cols-3'>
@@ -277,3 +278,4 @@ export default async function PostPage({ params }: PostPageProps) {
     </section>
   )
 }
+
