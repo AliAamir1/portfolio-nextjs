@@ -1,4 +1,4 @@
-# Jorge Assaf Portfolio
+# Ali Aamir Portfolio
 
 [![Jorge Assaf](./public/images/screenshot/landing-page-screenshot.png)](https://jorgeassaf.vercel.app/)
 
