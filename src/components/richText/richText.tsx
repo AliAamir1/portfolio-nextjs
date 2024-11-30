@@ -1,10 +1,8 @@
 import { PortableText } from 'next-sanity'
 
-import { ProjectsEntity } from '@/types/sanity'
-import { getProjectBySlug } from '@/lib/querys'
-import { client } from '@/lib/sanity'
+import { builder } from '@/lib/sanity'
 
-const portableTextComponents: any = {
+const portableTextComponents = {
   block: ({ children, value }: { children: React.ReactNode; value: any }) => {
     switch (value.style) {
       case 'h1':
@@ -78,12 +76,15 @@ const portableTextComponents: any = {
     ),
   },
   types: {
-    image: ({ value }: { value?: { url?: string; alt?: string } }) => (
+    imageE: ({ value }: { value?: { url?: string; alt?: string } }) => (
       <img
         src={value?.url || ''}
         alt={value?.alt || 'Image'}
         className='rounded-lg shadow-md'
       />
+    ),
+    image: ({ value }) => (
+      <img src={builder.image(value).url()} className='my-4 rounded-lg' />
     ),
     customComponent: ({ value }: { value?: any }) => (
       <div className='custom-class'>{JSON.stringify(value)}</div>

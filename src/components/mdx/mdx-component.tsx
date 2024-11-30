@@ -210,3 +210,4 @@ export const MdxComponent = ({ post }: { post: Post }) => {
     />
   )
 }
+

@@ -17,7 +17,8 @@ export const getProjectsQuery = groq`*[_type == 'project' && (defined(category) 
     color
   },
   description,
-  richDescription
+  richDescription,
+  slug
 }`
 
 export const getLatestProjectsQuery = groq`*[_type == 'project'] | order(_createdAt desc) {
