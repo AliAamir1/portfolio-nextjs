@@ -57,18 +57,8 @@ export const siteConfig = {
       title: 'Social',
       items: [
         {
-          title: 'Twitter',
-          href: links.twitter,
-          external: true,
-        },
-        {
           title: 'GitHub',
           href: links.githubAccount,
-          external: true,
-        },
-        {
-          title: 'Threads',
-          href: links.threads,
           external: true,
         },
       ],

@@ -29,6 +29,7 @@ const config = {
     ],
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     'jsx-a11y/heading-has-content': 'off',
+    '@typescript-eslint/consistent-type-imports': 'off',
   },
   settings: {
     tailwindcss: {
@@ -43,3 +44,4 @@ const config = {
 }
 
 module.exports = config
+

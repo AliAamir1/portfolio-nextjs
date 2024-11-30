@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { CodeIcon } from 'lucide-react'
 
 import { ProjectsEntity } from '@/types/sanity'
@@ -25,10 +26,12 @@ const ProjectImages = ({
         <CarouselContent className=''>
           {images.map((image, index) => (
             <CarouselItem key={index}>
-              <img
+              <Image
                 src={image.url}
                 alt={image.alt}
                 className='h-[400px] w-full rounded-lg object-cover sm:h-[500px]'
+                width={500}
+                height={400}
               />
             </CarouselItem>
           ))}
@@ -84,7 +87,7 @@ const ProjectDetails = ({ project }: { project: ProjectsEntity }) => {
 export default async function ProjectDescription({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
   console.log(slug)
