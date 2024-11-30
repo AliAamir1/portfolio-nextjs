@@ -64,7 +64,7 @@ const ProjectDetails = ({ project }: { project: ProjectsEntity }) => {
             variant='secondary'
             className='inline-flex items-center gap-2 rounded-lg'
           >
-            <img
+            <Image
               src={tech.image}
               alt={tech.name}
               width={16}

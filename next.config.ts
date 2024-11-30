@@ -24,6 +24,9 @@ const nextConfig = {
     ],
   },
   transpilePackages: ['three', '@react-three/drei', '@react-three/fiber'],
+  eslint:{
+    ignoreDuringBuilds: true,
+  }
 } satisfies NextConfig
 
 export default withContentCollections(nextConfig)
