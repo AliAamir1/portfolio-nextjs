@@ -62,3 +62,7 @@ export const getProjectBySlug = groq`*[_type == 'project' && slug == $slug] | or
   richDescription,
   slug
 }`
+
+export const getAllProjectSlugs = groq`*[_type == 'project']{
+  slug
+}`

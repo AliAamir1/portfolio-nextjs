@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { CodeIcon } from 'lucide-react'
 
 import { ProjectsEntity } from '@/types/sanity'
-import { getProjectBySlug } from '@/lib/querys'
+import { getAllProjectSlugs, getProjectBySlug } from '@/lib/querys'
 import { client } from '@/lib/sanity'
 import { Badge } from '@/components/ui/badge'
 import {
@@ -13,6 +13,12 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import RichText from '@/components/richText/richText'
+
+// eslint-disable-next-line @typescript-eslint/require-await
+export async function generateStaticParams() {
+  const slugs = await client.fetch<{ slug: string }[]>(getAllProjectSlugs)
+  return slugs
+}
 
 const ProjectImages = ({
   images,
@@ -58,7 +64,7 @@ const ProjectDetails = ({ project }: { project: ProjectsEntity }) => {
 
       {/* Technologies */}
       <div className='flex flex-wrap gap-3'>
-        {project.technologies.map((tech) => (
+        {project.technologies?.map((tech) => (
           <Badge
             key={tech.name}
             variant='secondary'

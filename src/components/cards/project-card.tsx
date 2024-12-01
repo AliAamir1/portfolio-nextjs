@@ -20,7 +20,7 @@ export const ProjectCard = ({ project }: ProjectsCardProps) => {
   const router = useRouter()
   return (
     <Card
-      className='flex min-h-[540px] w-full max-w-lg cursor-pointer flex-col justify-center'
+      className='flex h-[540px] w-full max-w-lg cursor-pointer flex-col justify-center'
       onClick={() => router.push(`/projects/${project.slug}`)}
     >
       <figure className='relative aspect-[16/10] w-full overflow-hidden'>
@@ -55,11 +55,12 @@ export const ProjectCard = ({ project }: ProjectsCardProps) => {
             </div>
           </div>
           <h3 className='text-xl font-semibold'>{project.name}</h3>
-          <p className='text-base text-muted-foreground'>
+
+          <p className='text-base text-muted-foreground line-clamp-3'>
             {project.description}
           </p>
           <div className='flex flex-wrap gap-2'>
-            {project.technologies.map((tech) => (
+            {project.technologies?.map((tech) => (
               <Badge
                 key={tech.name}
                 variant='secondary'
@@ -80,36 +81,40 @@ export const ProjectCard = ({ project }: ProjectsCardProps) => {
           </div>
         </div>
         <div className='flex items-center gap-4'>
-          <Link
-            className={cn(
-              buttonVariants({
-                variant: 'link',
-              }),
-            )}
-            href={project.repo}
-            target='_blank'
-            rel='noopener noreferrer'
-            title={`View ${project.name} repository`}
-            aria-label={`View ${project.name} repository`}
-            onClick={(e) => e.stopPropagation()}
-          >
-            View Repository
-          </Link>
-          <Link
-            className={cn(
-              buttonVariants({
-                variant: 'link',
-              }),
-            )}
-            href={project.link}
-            target='_blank'
-            rel='noopener noreferrer'
-            title={`View ${project.name} live site`}
-            aria-label={`View ${project.name} live site`}
-            onClick={(e) => e.stopPropagation()}
-          >
-            Live Site
-          </Link>
+          {!!project.repo && (
+            <Link
+              className={cn(
+                buttonVariants({
+                  variant: 'link',
+                }),
+              )}
+              href={project.repo}
+              target='_blank'
+              rel='noopener noreferrer'
+              title={`View ${project.name} repository`}
+              aria-label={`View ${project.name} repository`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              View Repository
+            </Link>
+          )}
+          {!!project.link && (
+            <Link
+              className={cn(
+                buttonVariants({
+                  variant: 'link',
+                }),
+              )}
+              href={project.link}
+              target='_blank'
+              rel='noopener noreferrer'
+              title={`View ${project.name} live site`}
+              aria-label={`View ${project.name} live site`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              Live Site
+            </Link>
+          )}
         </div>
       </CardContent>
     </Card>
