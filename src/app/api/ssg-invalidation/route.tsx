@@ -1,9 +1,6 @@
-import { revalidatePath, revalidateTag } from 'next/cache'
-import { Project } from 'next/dist/build/swc/types'
+import { revalidatePath } from 'next/cache'
 import { NextResponse, type NextRequest } from 'next/server'
 import { parseBody } from 'next-sanity/webhook'
-
-import { Technology } from '@/types/sanity'
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,7 +17,7 @@ export async function POST(req: NextRequest) {
       return new Response('Bad Request', { status: 400 })
     }
 
-    if (body?._type === 'project') {
+    if (body._type === 'project') {
       if (!body.slug) {
         return new Response('Bad Request', { status: 400 })
       }
@@ -28,10 +25,15 @@ export async function POST(req: NextRequest) {
       revalidatePath(`/projects/${body.slug}`)
       revalidatePath('/projects')
       revalidatePath('/')
+
+      return new Response('Revalidation successful', { status: 200 })
     }
+
+    // If the _type is not 'project', we still need to return a response
+    return new Response('No action taken', { status: 200 })
+
   } catch (error: any) {
     console.error(error)
     return new Response(error.message, { status: 500 })
   }
 }
-
