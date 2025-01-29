@@ -21,7 +21,7 @@ export const getProjectsQuery = groq`*[_type == 'project' && (defined(category) 
   slug
 }`
 
-export const getLatestProjectsQuery = groq`*[_type == 'project'] | order(_createdAt desc) {
+export const getLatestProjectsQuery = groq`*[_type == 'project'] | order(_updatedAt desc) {
   _id,
   name,
   "images": images[]{
@@ -42,7 +42,7 @@ export const getLatestProjectsQuery = groq`*[_type == 'project'] | order(_create
   slug
 }`
 
-export const getProjectBySlug = groq`*[_type == 'project' && slug == $slug] | order(_createdAt desc) {
+export const getProjectBySlug = groq`*[_type == 'project' && slug == $slug] | order(_updatedAt desc) {
   _id,
   name,
   "images": images[]{
