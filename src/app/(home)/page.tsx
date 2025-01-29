@@ -22,7 +22,7 @@ export default async function Home() {
         description='View my latest projects and experiments'
       />
 
-      <Projects projects={projects} />
+      <Projects projects={projects.slice(0,3)} />
 
       <PageHeader
         title='Recent Resourses'
